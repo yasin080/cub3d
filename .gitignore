@@ -1,0 +1,78 @@
+# Compiled binaries
+cub3d
+cub3D
+*.exe
+
+# Object files
+*.o
+*.obj
+*.a
+*.so
+*.dylib
+
+# Compiled Static libraries
+*.lai
+*.la
+*.lib
+
+# Executables
+*.out
+*.app
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Test output files
+test_output/
+*.test
+
+# MLX compiled files
+mlx/*.o
+mlx/libmlx.a
+mlx/libmlx_Linux.a
+
+# Libft compiled files
+src/libft/*.o
+src/libft/libft.a
+
+# GNL compiled files
+src/gnl/*.o
+
+# Backup files
+*.bak
+*.backup
+
+# Core dumps
+core
+core.*
+
+# Valgrind output
+valgrind-out.txt
+*.valgrind
+
+# Memory leak reports
+*.leak
