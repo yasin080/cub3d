@@ -1,5 +1,5 @@
 NAME = cub3d
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Werror -Wextra
 RM = rm -f
 
@@ -97,14 +97,15 @@ $(OBJDIR):
 $(OBJDIR)/%.o: %.c | $(OBJDIR)
 	@$(CC) -I src/ $(CFLAGS) -c $< -o $@
 
-$(NAME): $(OBJS)
-	@printf "\e[43m\e[30mCompilando Archivos Propios\e[0m\n"
-	@printf "\e[42m\e[30mArchivos Propios Compilados\e[0m\n"
-
+# Agregar regla para MLX
+mlx/libmlx.a:
 	@printf "\e[43m\e[30mCompilando MLX\e[0m\n"
 	@$(MAKE) -C mlx 2>/dev/null >/dev/null
 	@printf "\e[42m\e[30mArchivos MLX Compilada\e[0m\n"
 
+$(NAME): $(OBJS) mlx/libmlx.a
+	@printf "\e[43m\e[30mCompilando Archivos Propios\e[0m\n"
+	@printf "\e[42m\e[30mArchivos Propios Compilados\e[0m\n"
 	@printf "\e[43m\e[30mPreparando el cub3d\e[0m\n"
 	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) mlx/libmlx.a $(MLXFLAGS)
 	@printf "\e[42m\e[30mListo para jugar!\e[0m\n"
