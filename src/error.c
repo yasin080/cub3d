@@ -6,7 +6,7 @@
 /*   By: ybahri <ybahri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 12:41:29 by ybahri            #+#    #+#             */
-/*   Updated: 2025/08/15 01:16:57 by ybahri           ###   ########.fr       */
+/*   Updated: 2025/08/15 02:04:14 by ybahri           ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -25,7 +25,7 @@ static void	write_str(const char *s)
 
 void	put_error(const char *msg)
 {
-	write(2, "Error\n", 7);
+	write(2, "Error\n", 6);
 	write_str(msg);
 	write(2, "\n", 1);
 }

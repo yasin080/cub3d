@@ -6,7 +6,7 @@
 /*   By: ybahri <ybahri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 21:40:43 by ybahri            #+#    #+#             */
-/*   Updated: 2025/08/06 12:01:51 by ybahri           ###   ########.fr       */
+/*   Updated: 2025/08/15 02:06:29 by ybahri           ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -24,7 +24,7 @@ void	setup_hooks(t_mlx *mlx, t_cub_config *cfg, t_player *player)
 	
 	// Configurar hooks de eventos
 	mlx_hook(mlx->win_ptr, KeyPress, KeyPressMask, key_press, &g_hook_data);
-	mlx_hook(mlx->win_ptr, 33, 1L<<17, close_window_hook, &g_hook_data);
+	mlx_hook(mlx->win_ptr, 17, 0, close_window_hook, &g_hook_data);
 }
 
 int	key_press(int keycode, t_hook_data *data)
