@@ -6,7 +6,7 @@
 /*   By: ybahri <ybahri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 16:56:10 by alejanr2          #+#    #+#             */
-/*   Updated: 2025/08/15 01:42:17 by ybahri           ###   ########.fr       */
+/*   Updated: 2025/08/15 03:01:41 by ybahri           ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -29,9 +29,9 @@ int	validate_extension(const char *filename)
 int	checksAllErrors(int argc, char **argv, t_cub_config **cfg, t_mlx **mlx)
 {
 	if (argc != 2)
-		return (printf(ERROR_ARGUMENTOS), 0);
+		return (put_error(ERROR_ARGUMENTOS), 0);
 	if (!validate_extension(argv[1]))
-		return (printf(ERROR_EXTENSION), 0);
+		return (put_error(ERROR_EXTENSION), 0);
 
 	*cfg = parse_cub_file(argv[1]);
 	if (!*cfg)
@@ -41,7 +41,7 @@ int	checksAllErrors(int argc, char **argv, t_cub_config **cfg, t_mlx **mlx)
 	if (!*mlx)
 	{
 		free_cub_config(*cfg);
-		return (printf(ERROR_MLX), 0);
+		return (put_error(ERROR_MLX), 0);
 	}
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: ybahri <ybahri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 16:56:10 by alejanr2          #+#    #+#             */
-/*   Updated: 2025/08/10 16:39:28 by ybahri           ###   ########.fr       */
+/*   Updated: 2025/08/15 03:11:12 by ybahri           ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -44,15 +44,16 @@
 # define TEX_WE 3
 # define TEX_COUNT 4
 
-//Aplicar mas tarde Error/n:
-# define ERROR_EXTENSION "Error: Extension de archivo invalida\n"
-# define ERROR_ARGUMENTOS "Error: Nº de argumentos invalido\n"
-# define ERROR_PARSEO "Error: No existe el mapa .cub\n"
-# define ERROR_MLX "Error: No se pudo inicializar la ventana MLX\n"
-# define ERROR_MAPA_NO_CERRADO "Error: El mapa no está completamente cerrado\n"
-# define ERROR_PLAYERS "Error: Debe haber exactamente un jugador en el mapa\n"
-# define ERROR_CHAR "Error: Caracter incorrecto en la creacion del mapa\n"
-# define ERROR_LINEA_VACIA "Error: Se ha encontrado una linea vacia\n"
+//Error messages (for put_error function):
+# define ERROR_EXTENSION "Invalid file extension"
+# define ERROR_ARGUMENTOS "Invalid number of arguments"
+# define ERROR_PARSEO ".cub map file does not exist"
+# define ERROR_MLX "Failed to initialize MLX window"
+# define ERROR_MAPA_NO_CERRADO "Map is not completely closed"
+# define ERROR_PLAYERS "There must be exactly one player in the map"
+# define ERROR_CHAR "Invalid character in map creation"
+# define ERROR_LINEA_VACIA "Empty line found"
+# define ERROR_MAP_EMPTY_LINE "Empty lines not allowed in map"
 
 // BONUS
 # define MINIMAP_CELL_SIZE 8

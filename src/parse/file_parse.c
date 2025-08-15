@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   file_parse.c                                       :+:      :+:    :+:   */
@@ -6,9 +6,9 @@
 /*   By: ybahri <ybahri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 12:55:17 by ybahri            #+#    #+#             */
-/*   Updated: 2025/08/10 15:17:16 by ybahri           ###   ########.fr       */
+/*   Updated: 2025/08/15 03:12:20 by ybahri           ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 #include "cub3d.h"
 
@@ -46,11 +46,13 @@ static int	process_before_map(char *line, int *started, int *seen, t_cub_config 
 
 static int	process_map_line(char *line, char ***map, int *mlen, int *mcap)
 {
-	if (!is_map_line_or_blank(line))
-		return (put_error("Only map content after it starts"), 0);
-	if (!push_line(map, mlen, mcap, line))
-		return (put_error("Allocation failed"), 0);
-	return (1);
+    if (is_blank_line(line))
+        return (put_error(ERROR_MAP_EMPTY_LINE), 0);
+    if	(!is_map_line_or_blank(line))
+        return (put_error("Only map content after it starts"), 0);
+    if(!push_line(map, mlen, mcap, line))
+        return (put_error("Allocation failed"), 0);
+    return (1);
 }
 
 static int	read_all(int fd, t_cub_config *cfg, char ***map, int *mlen)
